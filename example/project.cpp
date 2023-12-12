@@ -355,9 +355,9 @@ std::vector<float> Custom::swingLegs()
             {
                 states[i] += 1;
                 if (FR_1 == thighs[i] || FL_1 == thighs[i])
-                    getLinearTraj(cur_pos[0], pos_standing[i][0] + 2*xgoal - 1.5*states[i]*xgoal/3, cur_pos[1], 0, calfTraj[i], thighTraj[i]);
+                    getLinearTraj(cur_pos[0], pos_standing[i][0] + xgoal - states[i]*xgoal/3, cur_pos[1], 0, calfTraj[i], thighTraj[i]);
                 if (RR_1 == thighs[i] || RL_1 == thighs[i])
-                    getLinearTraj(cur_pos[0], pos_standing[i][0] - states[i]*xgoal/4, cur_pos[1], 0, calfTraj[i], thighTraj[i]);
+                    getLinearTraj(cur_pos[0], pos_standing[i][0] - states[i]*xgoal/3, cur_pos[1], 0, calfTraj[i], thighTraj[i]);
             }
             prev_pos[i] = cur_pos;
         }
